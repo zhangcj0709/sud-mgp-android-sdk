@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.zhangcj0709'
-version = '1.2.8'
+version = '1.2.9'
 
 
 repositories {
@@ -18,7 +18,7 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact('libs/SudMGP-v1.2.8.1100.aar') {
+            artifact('libs/SudMGP-v1.2.9.1114-lite.aar') {
                 groupId project.group
                 artifactId project.name
                 version project.version
