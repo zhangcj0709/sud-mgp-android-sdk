@@ -1,17 +1,33 @@
-apply plugin:'maven-publish'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
-group = 'com.github.jitpack'
+group = 'com.github.zhangcj0709'
 version = '1.2.8'
 
 
+repositories {
+    mavenCentral()
+    google()
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 publishing {
     publications {
-        common(MavenPublication){
-            artifact('libs/SudMGP-v1.2.8.1100.aar'){
-                groupId  project.group
+        maven(MavenPublication) {
+            artifact('libs/SudMGP-v1.2.8.1100.aar') {
+                groupId project.group
                 artifactId project.name
                 version project.version
             }
         }
     }
+}
+
+wrapper {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
 }
