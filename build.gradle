@@ -1,0 +1,17 @@
+apply plugin:'maven-publish'
+
+group = 'com.github.jitpack'
+version = '1.2.8'
+
+
+publishing {
+    publications {
+        common(MavenPublication){
+            artifact('libs/SudMGP-v1.2.8.1100.aar'){
+                groupId  project.group
+                artifactId project.name
+                version project.version
+            }
+        }
+    }
+}
